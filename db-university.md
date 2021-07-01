@@ -5,8 +5,10 @@
 - per ogni appello d'esame a cui lo studente ha partecipato, è necessario memorizzare il voto ottenuto, anche se non sufficiente -->
 
 ## Università
-
-
+- id
+- nome
+- città
+- rettore
 
 # Dipartimenti
 - id
