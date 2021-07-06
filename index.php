@@ -14,11 +14,19 @@ if ($conn && $conn->connect_error) {
 } else {
     echo "Connection succesful";
 }
+//prepared statement
+$statement = $conn->prepare('INSERT INTO `students` (`name`, `surname`, `email`) VALUES (?, ?, ?) ');
+$statement->bind_param('sss', $name, $surname, $email);
+$name = 'Stefania';
+$lastname = 'Mastrella';
+$email = 'stemas@example.it';
+$statement->execute();
+
 //query
-$sql = "SELECT * FROM `students` WHERE YEAR(date_of_birth) = 1990";
+$sql = "SELECT * FROM `students`";
 $result = $conn->query($sql);
 if ($result && $result->num_rows > 0) { ?>
-<h1>Students born in 1990</h1>
+<h1>Students List</h1>
 <?php
 while($row = $result->fetch_assoc()) { ?>
 <div class="student" style="padding: 20px 0;">
