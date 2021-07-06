@@ -21,7 +21,11 @@ if ($result && $result->num_rows > 0) { ?>
 <h1>Students born in 1990</h1>
 <?php
 while($row = $result->fetch_assoc()) { ?>
-
+<div class="student" style="padding: 20px 0;">
+    <p> <strong>Student Name:</strong><?= $row['name']; ?></p>
+    <p> <strong>Student Lastname:</strong><?= $row['surname']; ?></p>
+    <p> <strong>Student E-mail:</strong><?= $row['email']; ?></p>
+</div>
 <?php }
 } elseif ($result) {
     echo "0 results";
