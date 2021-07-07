@@ -18,9 +18,10 @@ if ($conn && $conn->connect_error) {
 $statement = $conn->prepare('INSERT INTO `students` (`name`, `surname`, `email`) VALUES (?, ?, ?) ');
 $statement->bind_param('sss', $name, $surname, $email);
 $name = 'Stefania';
-$lastname = 'Mastrella';
+$surname = 'Mastrella';
 $email = 'stemas@example.it';
 $statement->execute();
+var_dump($statement);
 
 //query
 $sql = "SELECT * FROM `students`";
