@@ -21,7 +21,6 @@ $name = 'Stefania';
 $surname = 'Mastrella';
 $email = 'stemas@example.it';
 $statement->execute();
-var_dump($statement);
 
 //query
 $sql = "SELECT * FROM `students`";
